@@ -23,7 +23,7 @@ latitude and longitude values to find the distance a rover would travel on mars 
 also tracks the amount of time it would take to harvest a type of meteorite from the list of compositions.
 <br>
 </details>
-<details open>
+<details>
 <summary>How To Run The Code</summary>
 To start type 
 
