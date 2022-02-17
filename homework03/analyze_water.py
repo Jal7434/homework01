@@ -5,16 +5,16 @@ import json
 
 # calculate turbidity
 def calc_turbidity(calibration_constant, detector_current):
-"""
+    """
 def calc_turbidity - calculates the turbidity from the calibration costant multiplied by the detector current
-"""   
+    """   
  # T = a0 * I90
     # a0 = Calibration constant; I90 = Ninety degree detector current
     return calibration_constant * detector_current
 
 # calculate minimum time to fall below threshold
 def calc_thresh_time(calibration_constant, detector_current):
-	"""
+    """
 def calc_thresh_time - calculates the mininum time to fall below the threshold
 contains the following variables:     
 	Ts > T0((1-d)**b)
@@ -23,7 +23,7 @@ contains the following variables:
         log(Ts/T0) / log(1-d) > b
         Ts = Turbidity threshold for safe water; T0 = Current turbidity;
         d = decay factor per hour; b = hours elapsed
-	"""
+     """
     turb_thresh = 1.0
     curr_turb = calc_turbidity(calibration_constant, detector_current)
     decay = 0.02
