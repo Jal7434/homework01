@@ -36,5 +36,35 @@ docker run --rm -v $PWD:/data jal7434/ml_data_analysis:hw04 ml_data_analysis.py 
 Additionally aside from running the main file a test file is installed and can be tested with pytest test_ml_data_analysis.json to ensure that
 all the calculations found inside are done correctly.
 </details>
+<details>
+   <summary> Expected Results</summary>
+The ml_data_analysis.py script should have the following ouput 
 
+   ```
+   Average mass of 30 meteor(s):
+83857.3 grams
+
+Hemisphere summary data:
+There were 21 meteors found in the Northern & Eastern quadrant
+There were 6 meteors found in the Northern & Western quadrant
+There were 0 meteors found in the Southern & Eastern quadrant
+There were 3 meteors found in the Southern & Western quadrant
+
+Class summary data:
+  The {'L5': 1, 'H6': 1, 'EH4': 2, 'Acapulcoite': 1, 'L6': 6, 'LL3-6': 1, 'H5': 3, 'L': 2, 'Diogenite-pm': 1, 'Stone-uncl': 1, 'H4': 2, 'H': 1, 'Iron-IVA': 1, 'CR2-an': 1, 'LL5': 2, 'CI1': 1, 'L/LL4': 1, 'Eucrite-mmict': 1, 'CV3': 1}  
+   ```
+
+ this should be fairly straight forward as to what the data represents, with the exception of the Class summary data which was inadvertably left as raw data which can be interpreted as the 
+'class' and 'the amount found of the class'  within the Meteorite_Landings.json file.
+   </details>
+   <details> <summary> Additional Information </summary> 
+   More data for the Meteorite_Landing.json file is available at https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
+      to use this data in your directory or container use the command 
+  
+      wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
+   
+       
+   to obtain the added/updated Meteorite_Landings.json file.   
+   </details>
+   
 </details>
