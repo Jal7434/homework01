@@ -16,7 +16,7 @@ def data_file():
     
     with open('ML_Data_Sample.json','r') as f:
                ml_data =json.load(f)
-    rd = redis.Redis(host='172.17.0.24', port=6379)
+    rd = redis.Redis(host='172.17.0.24', port=6379, db=0)
     for d in ml_data['meteorite_landings']:
         rd.set(d['id'], json.dumps(d))    
 
@@ -26,12 +26,13 @@ def data_file():
 def data_load():
     '''
     Returns list of data loaded from the json file to the application
-
+    /data? displays all data from json file
+    Use /data?IDnum=(ID value between 10001 and 10300) to get specific information from the Json file
     Returns:
         JSON list of information
 	
     '''
-    rd = redis.Redis(host='172.17.0.24', port=6379)
+    rd =redis.Redis(host='172.17.0.24',port=6379, db=0)
     ID_list = []     
     for ID in rd.keys():
         ID_list.append(json.loads(ID))
@@ -60,6 +61,9 @@ def data_load():
     return "'Invalid ID, ID must be between 10001 and 10300..\n"
 if __name__ == '__main__':
     app.run(debug =True, host ='0.0.0.0')
+
+
+
 
 
 
