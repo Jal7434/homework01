@@ -27,7 +27,7 @@ def data_load():
     '''
     Returns list of data loaded from the json file to the application
     /data? displays all data from json file
-    Use /data?start=(ID value between 10001 and 10300) to get specific information from the Json file
+    Use /data?start=(ID value between 10001 and 10300) to get data starting a a certain id displaying all others after that value
     Returns:
         JSON list of information
 	
