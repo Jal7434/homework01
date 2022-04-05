@@ -27,7 +27,7 @@ def data_load():
     '''
     Returns list of data loaded from the json file to the application
     /data? displays all data from json file
-    Use /data?IDnum=(ID value between 10001 and 10300) to get specific information from the Json file
+    Use /data?start=(ID value between 10001 and 10300) to get specific information from the Json file
     Returns:
         JSON list of information
 	
@@ -40,16 +40,16 @@ def data_load():
     minID = min(ID_list) 
     maxID = max(ID_list)    
 
-    IDnum = request.args.get('IDnum',minID)        
-    if IDnum:
+    start = request.args.get('start',minID)        
+    if start:
         try:
-            IDnum = int(IDnum) 
-            if IDnum < minID or IDnum > maxID:
+            start = int(start) 
+            if start < minID or start > maxID:
                 return "Invalid ID, ID must be between 10001 and 10300.\n"
             data_list = []
-            while IDnum <= maxID:
-                data_list.append(json.loads(rd.get(IDnum)))
-                IDnum += 1
+            while start <= maxID:
+                data_list.append(json.loads(rd.get(start)))
+                start += 1
  
             if len(data_list) == 0:
                 return "Invalid ID, ID must be between 10001 and 10300.\n"
