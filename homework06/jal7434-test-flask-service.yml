@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jal7434-flask-service
+spec:
+  type: ClusterIP
+  selector:
+    app: jal7434-test-flask
+  ports:
+  - name: jal7434-test-flask
+    port: 5000
+    targetPort: 5000

@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jal7434-redis-deployment
+  labels:
+    username: jal7434
+    env: test
+    app: jal7434-test-redis
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: jal7434-test-redis
+  template:
+    metadata:
+      labels:
+        app: jal7434-test-redis
+    spec:
+      containers:
+        - name : jal7434-test-redis
+          image: redis:6
+          ports:
+          - name: http
+            containerPort: 6379
+          volumeMounts:    
+            - name: jal7434-data
+            - mountPath: "/data?"
+       volumes:
+       - name: jal7434-data
+         peristentVolumeClaim:
+           claimName: jal7434-data
