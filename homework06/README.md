@@ -31,4 +31,37 @@ Then to get the Kubernetes running you can use
 ```
 kubectl apply -f <file name>
 ```
-replace file name with each respective yml files
+replace file name with each respective yml files.
+Check the ID's of the Kubernetes resources by running
+```
+kubectl get services
+```
+record the IP address and find the name of the debugging deployment by doing.
+```
+kubectl get pods
+```
+
+To execute debug deployment you can use the command. 
+```
+kubectl exec -it <pod name> /bin/bash
+```
+this should allow for request to be made from the server.
+
+<h2> curl Requests </h2>
+The redis server should hopefully be running with the ip address change in the app.py for the new server that you are using under the 
+```rd =redis.Redis(```
+then to download the dtat to the redis server, POST Route is used by running 
+```
+curl -X POST <flaskIP>:5000/data
+```
+The flask ip will be the ip address recorded in the kubernetis enviornment
+and can be used to get information by doing 
+```
+curl <flaskIP>:5000/data
+```
+this will give out all available data,
+or you can use 
+```
+curl <flaskIP>:5000/data/?start=102xx-10300
+```
+to access from a certain starting point 
