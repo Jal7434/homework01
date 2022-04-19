@@ -9,7 +9,11 @@ The files in the project are:
 
 **Yaml files**
 ```jal7434-test-redis-pvc.yml```: Stores data written to it from the deployment file independetly from the kubernetes pods.
+
 ```jal7434-test-redis-deployment.yml```: Redis setup/deployment of the Redis Database.
+
 ```jal7434-test-redis-service.yml```: implements a persistent IP address to interact with the redis.
+
 ```jal7434-test-flask-deployment.yml```: Deployment for the FLASK API with replicas.
+
 ```jal7434-test-flask-service.yml```: implements a persistent IP address to use that allows interaction with the API.
