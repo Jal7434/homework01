@@ -49,18 +49,24 @@ this should allow for request to be made from the server.
 
 <h2> curl Requests </h2>
 The redis server should hopefully be running with the ip address change in the app.py for the new server that you are using under the 
-```rd =redis.Redis(```
+
+```
+rd =redis.Redis 
+```
 then to download the dtat to the redis server, POST Route is used by running 
+
 ```
 curl -X POST <flaskIP>:5000/data
 ```
 The flask ip will be the ip address recorded in the kubernetis enviornment
 and can be used to get information by doing 
+
 ```
 curl <flaskIP>:5000/data
 ```
 this will give out all available data,
 or you can use 
+
 ```
 curl <flaskIP>:5000/data/?start=102xx-10300
 ```
