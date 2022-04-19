@@ -11,10 +11,24 @@ The files in the project are:
 
 ```jal7434-test-redis-pvc.yml```: Stores data written to it from the deployment file independetly from the kubernetes pods.
 
-```jal7434-test-redis-deployment.yml```: Redis setup/deployment of the Redis Database.
+```jal7434-test-redis-deployment.yml```: Redis setup/deployment of the Redis Database. // ```**issue with /data**```
+
 
 ```jal7434-test-redis-service.yml```: implements a persistent IP address to interact with the redis.
 
 ```jal7434-test-flask-deployment.yml```: Deployment for the FLASK API with replicas.
 
 ```jal7434-test-flask-service.yml```: implements a persistent IP address to use that allows interaction with the API.
+
+<h2> If everything works </h2>
+If the files work correctly you can start off by downloading the Meteorite Landings dataset by doing 
+
+```
+wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
+```
+
+Then to get the Kubernetes running you can use 
+```
+kubectl apply -f <file name>
+```
+replace file name with each respective yml files
