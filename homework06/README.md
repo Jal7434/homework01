@@ -8,6 +8,7 @@ The files in the project are:
 ```app.py``` : python script that provides routes to download and returns information from the Meteorite Landings Dataset.
 
 **Yaml files**
+
 ```jal7434-test-redis-pvc.yml```: Stores data written to it from the deployment file independetly from the kubernetes pods.
 
 ```jal7434-test-redis-deployment.yml```: Redis setup/deployment of the Redis Database.
