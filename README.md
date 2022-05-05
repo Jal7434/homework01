@@ -1,3 +1,3 @@
 # homework01
 
-includes this README file and 2 exercises that were chosen from the python exercises.
+Contains all the homework assignments and their respective readme files and python files for coe 332
