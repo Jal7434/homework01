@@ -33,8 +33,21 @@ docker run --rm -v $PWD:/data jal7434/ml_data_analysis:hw04 ml_data_analysis.py 
 
 ```
 
-Additionally aside from running the main file a test file is installed and can be tested with pytest test_ml_data_analysis.json to ensure that
+Additionally aside from running the main file a test file is installed and can be tested with pytest 
+test_ml_data_analysis.json to ensure that
 all the calculations found inside are done correctly.
+
+To run the analysis script against a unique data set besides 
+the example data set provided in the container, you can mount your own data set into 
+the container, by first exiting the container with exit and then running the following
+ command in the repository with your Dockerfile:
+
+```
+
+docker run --rm -it -v $PWD:/data jal7434/ml_data_analysis:hw04 /bin/bash
+
+```
+
 </details>
 <details>
    <summary> Expected Results</summary>
